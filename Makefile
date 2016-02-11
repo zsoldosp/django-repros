@@ -55,7 +55,6 @@ docs:
 
 tag: VERSION=$(shell python -c"import changeformrepro as m; print(m.__version__)")
 tag: TAG:=v${VERSION}
-tag: exit_code:=$(shell git ls-remote origin | grep -q tags/${TAG}; echo $$?)
 tag:
 ifeq ($(exit_code),0)
 	@echo "Tag ${TAG} already present"
